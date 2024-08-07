@@ -1,41 +1,22 @@
-# Quasar App (quasar-project)
+# Quasar error repro
 
-A Quasar Project
+A repository containing code to reproduce error:
+```txt
+Error [ERR_REQUIRE_ESM]: require() of ES Module
+/tmp/.mount_TGGPla6sVv0t/resources/app.asar/node_modules/conf/dist/source/index.js
+from
+/tmp/.mount_TGGPla6sVv0t/resources/app.asar/electron-main.js
+not supported.
+```
 
-## Install the dependencies
+## Steps to reproduce
+
+#### 1) Install dependencies
 ```bash
-yarn
-# or
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+#### 2) Start the app in Electron mode
 ```bash
-quasar dev
+npx quasar dev -m electron
 ```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
