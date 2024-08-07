@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
 import os from 'os';
-import Store from "conf";
+import Store from "electron-store";
 
 // needed in case process is undefined under Linux
 const platform = process.platform || os.platform();
@@ -26,8 +26,8 @@ function createWindow() {
 
   mainWindow.loadURL(process.env.APP_URL);
 
-  const store = new Store<string>();
-  console.log("Test:", store.get("test", "success"))
+  const store = new Store<any>();
+  console.log("Test:", store.get("test", "success"));
 
   if (process.env.DEBUGGING) {
     // if on DEV or Production with debug enabled
